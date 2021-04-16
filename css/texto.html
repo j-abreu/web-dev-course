@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Texto</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <style>
+        /* ... */
+        * {
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        p {
+            /* default units*/
+            font-size: 1em;
+            font-size: 100%;
+            font-size: 16px;
+            font-size: 12pt;
+
+            /* absolute units */
+            font-size: 100px; /* pixels */
+            font-size: 72pt; /* points */
+            font-size: 1in; /* inches */
+
+            /* relative units */
+            font-size: 2.2em;
+            font-size: 2.2rem;
+            font-size: 50vh;
+            font-size: 10vw;
+
+            /* fonts */
+            font-family: monospace;
+            font-family: Georgia, serif;
+            font-family: Verdana, sans-serif;
+            font-family: 'Indie Flower', cursive;
+
+            /* weight */
+            font-weight: 100;
+            font-style: italic;
+            text-transform: uppercase;
+            /* text-decoration: overline underline line-through; */
+            word-spacing: 10px;
+            letter-spacing: 20px;
+            text-align: center;
+        }
+
+        .botao {
+            text-decoration: none;
+            font-size: 3.5vw;
+            padding: 1.5vw 4vw;
+            border-radius: 4vw;
+        }
+
+        .destaque {
+            color: #fff;
+            background-color: mediumseagreen;
+            border: solid 3px mediumseagreen;
+        }
+
+        .destaque:hover {
+            border: solid 3px mediumspringgreen;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>
+            Que texto
+            <br>legal!!!
+        </p>
+    </div>
+    <a href="http://google.com" class="botao destaque">Google</a>
+</body>
+
+</html>

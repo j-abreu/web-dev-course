@@ -1,0 +1,113 @@
+<div class="images">        
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg"
+        alt="muro da cidade"
+        width="513" height="342"
+        title="Muro da cidade por Tarso Bessa">
+    </p>
+
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif"
+        alt="gif da coder"
+        titile="gif da coder">
+    </p>
+
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png"
+        alt="imagem ciruclar"
+        titile="imagem circular"
+        width="513">
+    </p>
+
+    <p class='text'>
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg"
+        alt="avatar" height="50" align='left'>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+        posuere ipsum in risus condimentum, sed consequat tellus auctor.
+        Ut mattis, elit quis luctus accumsan, mi lorem cursus risus, a
+        molestie ipsum orci volutpat sem. Cras condimentum condimentum
+        turpis, a vulputate nunc lacinia nec.
+    </p>
+
+    <p class="city"></p>
+
+    <p>
+        <picture>
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+            media="(min-width: 600px)">
+            <source srcset="http://files.cod3r.com.br/curso-web/imagem2.gif"
+            media="(min-width: 550px)">
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="logo">
+        </picture>
+    </p>
+</div>
+
+<style>
+    p {
+        position: absolute;
+        display: none;
+    }
+
+    body {
+        overflow: hidden;
+    }
+
+    .circular {
+        width: 513px;
+        background-color: #444;
+    }
+
+    .text {
+        width: 400px;
+    }
+
+    .text img {
+        margin-right: 10px;
+    }
+
+    /* .city {
+        width: 513px;
+        height: 342px;
+        background-image: url(http://files.cod3r.com.br/curso-web/imagem4.jpg);
+        background-position: center;
+        background-size: 200%;
+        background-repeat: no-repeat;
+    } */
+</style>
+
+<script>
+    function move(element, start, stop, pixels, callback) {
+        const newPos = start-pixels
+        if (newPos >= stop) {
+            element.style.left = newPos + 'px'
+            setTimeout(() => {move(element, newPos, stop, pixels, callback)}, 1)
+        } else {
+            callback()
+        }
+    }
+    
+    function slider() {
+        const slideElements = document.querySelectorAll('.images > p')
+        const slides = Array.from(slideElements)
+
+        showSlides(slides, 0)
+    }
+
+    function showSlides(slides, i) {
+        const slide = slides[i]
+        i = i+1 >= slides.length ? 0 : i+1
+        
+        slide.style.display = 'block'
+        const start = innerWidth
+        const stop = -slide.clientWidth
+        console.log(-slide.clientWidth)
+        slide.style.left = `${start}px`
+
+        move(slide, start, stop, 2, () => {
+            slide.style.diplay = 'none'
+            showSlides(slides, i)
+        })
+    }
+    slider()
+
+</script>

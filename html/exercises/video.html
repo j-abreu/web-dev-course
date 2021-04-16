@@ -1,0 +1,54 @@
+<h1>Video</h1>
+
+<video id="myvideo" width="700" controls controlsList="nodownload">
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+    Your browser doesn't have support for this format of video
+</video>
+
+<div wm-progress="myvideo" class="progress">
+    <div></div>
+</div>
+
+<button wm-play="myvideo">PLAY</button>
+<button wm-pause="myvideo">PAUSE</button>
+
+<style>
+    button {
+        margin: 10px;
+    }
+
+    .progress {
+        width: 700px;
+        height: 20px;
+        border: solid 1px #444;
+        margin: 20px 0px;
+    }
+    .progress > div {
+        background-color: red;
+        color: white;
+        height: 100%;
+        width: 0%;
+    }
+</style>
+
+<script>
+    
+    function videoProgressBar(id) {
+        const video = document.getElementById(id)
+        video.oncontextmenu = () => false
+
+        document.querySelector(`[wm-play=${id}]`).onclick = () => video.play()
+        document.querySelector(`[wm-pause=${id}]`).onclick = () => video.pause()
+
+        setInterval(() => {
+            const percentage = video.currentTime/video.duration*100
+            const bar = document.querySelector(`[wm-progress=${id}] > div`)
+            bar.style.width = `${percentage}%`
+            bar.innerHTML = `${percentage.toFixed(2)}%`
+        }, 100);
+
+    }
+
+    videoProgressBar('myvideo')
+
+</script>

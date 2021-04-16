@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #03</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            border: solid 4px darkgreen;
+            grid-area: content;
+        }
+
+        header {
+            border: solid 4px darkmagenta;
+            grid-area: header;
+        }
+
+        footer {
+            border: solid 4px darkorange;
+            grid-area: footer;
+        }
+
+        nav {
+            border: solid 4px darkred;
+            grid-area: nav;
+        }
+
+        body {
+            display: grid;
+            min-height: 100vh;
+            grid-template-columns: 100px 1fr;
+            grid-template-rows: 100px 1fr 100px;
+            grid-template-areas:
+            'header header'
+            'nav content'
+            'footer footer';
+            gap: 5px 5px;
+        }
+
+        @media (orientation: portrait) {
+            body {
+                grid-template-columns: 1fr;
+                grid-template-rows: 80px 1fr 100px;
+                grid-template-areas:
+                'nav' 'content' 'footer';
+            }
+
+            header {display: none;}
+        }
+    </style>
+</head>
+
+<body>
+    <main class="tag">CONTEÚDO</main>
+    <header class="tag">CABEÇALHO</header>
+    <footer class="tag">RODAPÉ</footer>
+    <nav class="tag">NAVEGAÇÃO</nav>
+
+</body>
+
+</html>

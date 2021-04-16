@@ -1,0 +1,61 @@
+<h1>Table</h1>
+
+<table>
+    <caption>Products</caption>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Apple</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Bread</td>
+            <td>5</td>
+            <td>0.30</td>
+            <td>1.5</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">Total</td>
+            <td>3.5</td>
+        </tr>
+    </tfoot>
+</table>
+
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    td, th {
+        padding: 10px;
+    }
+
+    thead tr {
+        border-bottom: solid #444 3px;
+
+    }
+
+    tbody tr:hover {
+        background-color: #dedede;
+    }
+    tbody td:hover {
+        background-color: #cc0000;
+    }
+
+    tfoot {
+        background-color: #444;
+        color: white;
+        font-weight: bold;
+    }
+</style>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <!--style-->
+    <style>
+        #content {
+            padding: 30px 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Exercises</h1>
+    </header>
+    <nav>
+        <a href="exercises/text1.html">exercise 01 - Text</a> |
+        <a href="exercises/text2.html">exercise 02 - Text</a> |
+        <a href="exercises/lists.html">exercise 03 - Lists</a> |
+        <a href="exercises/nestedLists.html">exercise 04 - Nested Lists</a> |
+        <a href="exercises/table.html">exercise 04 - Table</a> |
+        <a href="exercises/form/form.html">exercise 05 - Form</a> |
+        <a href="exercises/images.html">exercise 06 - Images</a> |
+        <a href="exercises/video.html">exercise 07 - Video</a> |
+    </nav>
+    <section id='content'></section>
+    <footer>
+        <br>
+        Modern Web Course
+    </footer>
+    <script>
+        const content = document.getElementById('content')
+        document.querySelectorAll('a').forEach(link => {
+            link.onclick = function(e) {
+                e.preventDefault()
+                fetch(link.href)
+                    .then(res => res.text())
+                    .then(html => content.innerHTML = html)
+            }
+        })
+    </script>
+    
+</body>
+</html>

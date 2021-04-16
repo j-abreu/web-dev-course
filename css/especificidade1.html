@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade CSS</title>
+    <style>
+        /*
+            specificity calculator: https://specificity.keegan.st
+        */
+
+        /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+        /*
+            specificity
+
+            1. rules using i !important
+            2. specific selectors
+            3. last processed rule
+
+        */
+
+        /* more specific than selector p */
+        .observacao {
+            background-color: aqua;
+            border: dashed 5px;
+            padding: 200px!important; /* more important than all other*/
+            font-size: 40px;
+        }
+
+        p {
+            background-color: #444;
+        }
+        /* more specific than selector .observacao*/
+        p.observacao {
+            padding: 2px;
+            color: darkorange
+            background: linear-gradient(to right, aqua, rgb(255, 20, 147));
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <p class='observacao'>Olha essa observação!!!!</p>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <!-- onclick='goToIn5s(event)' -->
+        <a wait=2000 href="https://google.com.br">Google</a>
+    </div>
+    <script>
+        function goToIn5s(e, timeToWait=5000) {
+            e.preventDefault()
+            console.log(`quitting in ${timeToWait/1000} seconds`)
+            setTimeout(() => {
+                const link = e.target
+                window.location.href = link.href
+            }, timeToWait)
+        }
+
+        // const a = document.querySelector('a')
+        // a.onclick = goToIn5s
+
+        const a = document.querySelector('[wait]')
+        const timeToWait = a.getAttribute('wait')
+        console.log(timeToWait)
+        a.onclick = (e) => goToIn5s(e, timeToWait)
+        
+    </script>
+</body>

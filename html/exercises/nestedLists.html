@@ -1,0 +1,36 @@
+<h1>Nested Lists</h1>
+
+<ul class='tree'>
+    <li folder>Backend</li>
+    <ul>
+        <li folder>app</li>
+        <ul>
+            <li>product.js</li>
+            <li>user.js</li>
+            <li>server.js</li>
+        </ul>
+        <li folder>config</li>
+        <ul>
+            <li>database.js</li>
+            <li>config.js</li>
+        </ul>
+    </ul>
+    <li folder>Frontend</li>
+    <ul>
+        <li folder>public</li>
+        <ul>
+            <li>app.css</li>
+            <li>app.js</li>
+            <li>index.html</li>
+        </ul>
+    </ul>
+</ul>
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<script>
+    document.querySelectorAll('[folder]').forEach(folder => {
+        folder.onclick = function(e) {
+            const ul = folder.nextElementSibling
+            ul.style.display = ul.style.display === 'none' ? 'block' : 'none'
+        }
+    })
+</script>

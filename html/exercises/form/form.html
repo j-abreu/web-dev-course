@@ -1,0 +1,51 @@
+<h1>Form</h1>
+
+<form method="post">
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <textarea name="bio" id="" cols="30" rows="10"></textarea>
+    <div>
+        <input type="radio" name="usertype" value="professor"> Professor
+        <input type="radio" name="usertype" value="student"> Student
+        <input type="radio" name="usertype" value="admin"> Admin
+    </div>
+
+    <div>
+        <input type="checkbox" name="active" value=true> Active
+    </div>
+
+    <select name="state">
+        <option value="">selecione</option>
+        <option value="pa">Pará</option>
+        <option value="ce">Ceará</option>
+        <option value="go">Goiás</option>
+        <option value="mt">Mato Grosso</option>
+    </select>
+
+    <select name="insterests" multiple size=5>
+        <option value="c">C</option>
+        <option value="cpp">C++</option>
+        <option value="python">Python</option>
+        <option value="js">JavaScrip</option>
+        <option value="php">PHP</option>
+        <option value="dart">Dart</option>
+    </select>
+
+    <button formaction="http://localhost:3003/users">create</button>
+    <button formaction="http://localhost:3003/users" formmethod="get">get</button>
+    <button formaction="http://localhost:3003/users/3">edit</button>
+</form>
+
+<style>
+    input,
+    textarea,
+    select {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type=radio],
+    input[type=checkbox] {
+        display: inline;
+    }
+</style>
